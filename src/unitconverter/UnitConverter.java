@@ -3,16 +3,16 @@ package unitconverter;
 public interface UnitConverter {
 
 	//Getter methods
-	String sourceUnitGetter();
-	String targetUnitGetter();
-	double sourceGetter();
-	double targetGetter();
+	String getSourceUnit();
+	String getTargetUnit();
+	double getSource();
+	double getTarget();
 	
 	//Setter methods
-	String sourceUnitSetter();
-	String targetUnitSetter();
-	double sourceSetter();
-	double targetSetter();
+	String setSourceUnit();
+	String setTargetUnit();
+	double setSource();
+	double setTarget();
 	
 	//Conversion
 	double convert();
