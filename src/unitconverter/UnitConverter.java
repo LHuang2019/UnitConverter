@@ -9,10 +9,10 @@ public interface UnitConverter {
 	double getTarget();
 	
 	//Setter methods
-	String setSourceUnit();
-	String setTargetUnit();
-	double setSource();
-	double setTarget();
+	void setSourceUnit();
+	void setTargetUnit();
+	void setSource();
+	void setTarget();
 	
 	//Conversion
 	double convert();
