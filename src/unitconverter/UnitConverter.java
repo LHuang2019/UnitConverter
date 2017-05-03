@@ -15,6 +15,6 @@ public interface UnitConverter {
 	void setTarget();
 	
 	//useful methods
-	void clear();
+	void reset();
 	String toString();
 }

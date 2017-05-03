@@ -114,10 +114,15 @@ public class LengthConverter implements UnitConverter {
 		return target;
 	}
 
+	/**
+	 * method which resets the converter to initial state
+	 */
 	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
+	public void reset() {
+		this.sourceUnit = "";
+		this.targetUnit = "";
+		this.source = 0;
+		this.target = 0;
 	}
 
 }
