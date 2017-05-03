@@ -124,5 +124,19 @@ public class LengthConverter implements UnitConverter {
 		this.source = 0;
 		this.target = 0;
 	}
+	
+	/**
+	 * toString method for lengthConverter object
+	 * returns the state of the object
+	 */
+	@Override
+	public String toString()
+	{
+		String message = "Current state:\n"
+						 + "source: " + this.source + " " + this.sourceUnit + "\n"
+						 + "target: " + this.target + " " + this.targetUnit;
+		return message;
+		
+	}
 
 }
