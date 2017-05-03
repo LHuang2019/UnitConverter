@@ -40,58 +40,78 @@ public class LengthConverter implements UnitConverter {
 		this.target = 0;
 	}
 
+	/**
+	 * return source unit
+	 */
 	@Override
 	public String getSourceUnit() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.sourceUnit;
 	}
 
+	/**
+	 * return target unit
+	 */
 	@Override
 	public String getTargetUnit() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.targetUnit;
 	}
 
+	/**
+	 * return source value
+	 */
 	@Override
 	public double getSource() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.source;
 	}
 
+	/**
+	 * return target value
+	 */
 	@Override
 	public double getTarget() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.target;
 	}
 
+	/**
+	 * set source unit
+	 */
 	@Override
-	public String setSourceUnit() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setSourceUnit(String sourceUnit) {
+		this.sourceUnit = sourceUnit;
 	}
 
+	/**
+	 * set target unit
+	 */
 	@Override
-	public String setTargetUnit() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setTargetUnit(String targetUnit) {
+		this.targetUnit = targetUnit;
 	}
 
+	/**
+	 * set source value
+	 */
 	@Override
-	public double setSource() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setSource(double source) {
+		this.source = source;
 	}
 
+	/**
+	 * set target value
+	 */
 	@Override
-	public double setTarget() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setTarget() {
+		this.target = this.convert();
 	}
-
-	@Override
-	public double convert() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	/**
+	 * method which does the conversion from source to target for the object
+	 * @return
+	 */
+	private double convert()
+	{
+		double target = 0;
+		return target;
 	}
 
 	@Override
