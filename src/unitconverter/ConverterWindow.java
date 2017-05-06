@@ -17,9 +17,9 @@ public class ConverterWindow extends Frame implements ActionListener {
     
     public ConverterWindow()
     {
-        setLayout(new GridLayout());
+        setLayout(new FlowLayout());
         setTitle("Unit Converter");
-        setSize(350, 120);
+        setSize(300, 120);
         
         this.setup();
         
@@ -31,11 +31,11 @@ public class ConverterWindow extends Frame implements ActionListener {
         this.lbInput = new Label("Enter your value: ");
         this.add(this.lbInput);
         
-        this.lbOutput = new Label("Result value: ");
-        this.add(this.lbOutput);
-        
         this.tfSource = new TextField(10);
         this.add(this.tfSource);
+        
+        this.lbOutput = new Label("Result value: ");
+        this.add(this.lbOutput);
         
         this.tfTarget = new TextField(10);
         this.tfTarget.setEditable(false);
@@ -46,6 +46,11 @@ public class ConverterWindow extends Frame implements ActionListener {
     public void actionPerformed(ActionEvent arg0) {
         // TODO Auto-generated method stub
         
+    }
+    
+    public static void main(String[] args)
+    {
+        new ConverterWindow();
     }
 
 }
