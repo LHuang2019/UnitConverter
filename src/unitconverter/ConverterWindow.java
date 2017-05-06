@@ -1,9 +1,8 @@
 package unitconverter;
 
 import java.awt.*;
-import java.awt.event.*;
 
-public class ConverterWindow extends Frame implements ActionListener {
+public class ConverterWindow extends Frame {
 
     private Button convert;
     
@@ -40,12 +39,6 @@ public class ConverterWindow extends Frame implements ActionListener {
         this.tfTarget = new TextField(10);
         this.tfTarget.setEditable(false);
         this.add(this.tfTarget);
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-        // TODO Auto-generated method stub
-        
     }
     
     public static void main(String[] args)
