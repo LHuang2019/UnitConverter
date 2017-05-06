@@ -4,10 +4,10 @@ import java.awt.*;
 
 public class ConverterWindow extends Frame {
 
-    private Button convert;
+    private Button btnConvert;
     
-    private Label lbInput;
-    private Label lbOutput;
+    private Label lblInput;
+    private Label lblOutput;
     
     private TextField tfSource;
     private TextField tfTarget;
@@ -27,14 +27,14 @@ public class ConverterWindow extends Frame {
     
     private void setup()
     {
-        this.lbInput = new Label("Enter your value: ");
-        this.add(this.lbInput);
+        this.lblInput = new Label("Enter your value: ");
+        this.add(this.lblInput);
         
         this.tfSource = new TextField(10);
         this.add(this.tfSource);
         
-        this.lbOutput = new Label("Result value: ");
-        this.add(this.lbOutput);
+        this.lblOutput = new Label("Result value: ");
+        this.add(this.lblOutput);
         
         this.tfTarget = new TextField(10);
         this.tfTarget.setEditable(false);
