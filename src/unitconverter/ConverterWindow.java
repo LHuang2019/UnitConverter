@@ -2,6 +2,7 @@ package unitconverter;
 
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class ConverterWindow extends Frame {
 
     private Button btnConvert;
