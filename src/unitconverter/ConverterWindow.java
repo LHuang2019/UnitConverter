@@ -1,12 +1,13 @@
 package unitconverter;
 import java.awt.Container;
 import java.awt.FlowLayout;
-import java.awt.event.*;
+import java.text.DecimalFormat;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class ConverterWindow extends JFrame {
 
+    private Container window;
     private JLabel lblInput;
     private JLabel lblOutput;
     private JFormattedTextField tfSource;
@@ -16,10 +17,11 @@ public class ConverterWindow extends JFrame {
 
     public ConverterWindow()
     {
-        Container window = getContentPane();
+        window = getContentPane();
         window.setLayout(new FlowLayout());
-        this.converter = new LengthConverter();
-        this.setup();
+        converter = new LengthConverter();
+        
+        setup();
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Unit Converter");
@@ -29,34 +31,30 @@ public class ConverterWindow extends JFrame {
 
     private void setup()
     {
-        this.lblInput = new JLabel("Enter your value: ");
-        this.add(this.lblInput);
-
-        this.lblOutput = new JLabel("Result value: ");
-        this.add(this.lblOutput);
-
-        setupConversion();
-        
+        setupSource();
+        setupTarget();
     }
-
-    private void setupConversion()
+    
+    private void setupSource()
     {
-        this.tfSource = new JFormattedTextField(10);
-        this.tfTarget = new JFormattedTextField(10);
+        lblInput = new JLabel("Enter your value: ", JLabel.LEFT);
+        window.add(lblInput);
         
-        this.tfTarget.setEditable(false);
-
-        this.tfSource.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent evt) 
-            {
-            }
-        });
-
-        this.add(this.tfSource);
-        this.add(this.tfTarget);
+        tfSource = new JFormattedTextField(new DecimalFormat());
+        tfSource.setColumns(10);
+        window.add(tfSource);
     }
 
+    private void setupTarget()
+    {
+        lblOutput = new JLabel("Result value: ", JLabel.LEFT);
+        window.add(lblOutput);
+        
+        tfTarget = new JFormattedTextField(new DecimalFormat());
+        tfTarget.setColumns(10);
+        window.add(tfTarget);
+    }
+    
     public static void main(String[] args)
     {
         new ConverterWindow();
