@@ -15,9 +15,9 @@ public class ConverterWindow extends JFrame {
     private JLabel lblOutput;
     private JFormattedTextField tfSource;
     private JFormattedTextField tfTarget;
-    private JComboBox<String> cbConverter;
-    private JComboBox<String> cbSourceUnit;
-    private JComboBox<String> cbTargetUnit;
+    private JComboBox<String> cbxConverter;
+    private JComboBox<String> cbxSourceUnit;
+    private JComboBox<String> cbxTargetUnit;
     
     private UnitConverter converter;
 
@@ -47,11 +47,11 @@ public class ConverterWindow extends JFrame {
         lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
         window.add(lblConverterType);
         
-        cbConverter = new JComboBox(converterList);
-        cbConverter.setSelectedIndex(0);
-        cbConverter.setPreferredSize(new Dimension(120, cbConverter.getPreferredSize().height));
-        ((JLabel)cbConverter.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        window.add(cbConverter);
+        cbxConverter = new JComboBox(converterList);
+        cbxConverter.setSelectedIndex(0);
+        cbxConverter.setPreferredSize(new Dimension(120, cbxConverter.getPreferredSize().height));
+        ((JLabel)cbxConverter.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        window.add(cbxConverter);
     }
     
     private void setupSource()
