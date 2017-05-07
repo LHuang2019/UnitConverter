@@ -8,6 +8,8 @@ package unitconverter;
 public class LengthConverter implements UnitConverter {
 
     // variable for conversion
+    final static public String[] unit = { "Meter", "KM", "CM", "MM", "Mile", "Yard", "Foot", "Inch", "Nautical Mile" };
+    
     final static private double KM_TO_METER = 1000;
     final static private double CM_TO_METER = 0.01;
     final static private double MM_TO_METER = 0.001;
