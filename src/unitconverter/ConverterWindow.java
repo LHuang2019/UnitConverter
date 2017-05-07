@@ -1,48 +1,41 @@
 package unitconverter;
-import java.awt.*;
+import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.event.*;
+import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class ConverterWindow extends Frame {
+public class ConverterWindow extends JFrame {
 
-    private Button btnConvert;
+    private JLabel lblInput;
+    private JLabel lblOutput;
+    private JFormattedTextField tfSource;
+    private JFormattedTextField tfTarget;
 
-    private Label lblInput;
-    private Label lblOutput;
-
-    private TextField tfSource;
-    private TextField tfTarget;
-
-    private LengthConverter converter;
+    private UnitConverter converter;
 
     public ConverterWindow()
     {
-        setLayout(new FlowLayout());
+        Container window = getContentPane();
+        
+        window.setLayout(new FlowLayout());
         setTitle("Unit Converter");
         setSize(300, 120);
 
+        this.converter = new LengthConverter();
         this.setup();
-
         setVisible(true);
     }
 
     private void setup()
     {
-        this.lblInput = new Label("Enter your value: ");
+        this.lblInput = new JLabel("Enter your value: ");
         this.add(this.lblInput);
 
-        this.tfSource = new TextField(10);
-        this.add(this.tfSource);
-
-        this.lblOutput = new Label("Result value: ");
+        this.lblOutput = new JLabel("Result value: ");
         this.add(this.lblOutput);
 
-        this.tfTarget = new TextField(10);
-        this.tfTarget.setEditable(false);
-        this.add(this.tfTarget);
-
-        addWindowListener(new WindowAdapter()
-        {
+        addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent evt)
             {
@@ -50,8 +43,6 @@ public class ConverterWindow extends Frame {
             }
         });
     }
-
-
 
     public static void main(String[] args)
     {
