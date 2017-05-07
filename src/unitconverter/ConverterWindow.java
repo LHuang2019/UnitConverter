@@ -37,40 +37,49 @@ public class ConverterWindow extends JFrame {
 
     private void setup()
     {
+        setupFrame();
         setupConverter();
         setupSource();
         setupTarget();
     }
     
-    private void setupConverter()
+    private void setupFrame()
     {
         lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
         window.add(lblConverterType);
         
         cbxConverter = new JComboBox(converterList);
-        cbxConverter.setSelectedIndex(0);
-        cbxConverter.setPreferredSize(new Dimension(120, cbxConverter.getPreferredSize().height));
-        ((JLabel)cbxConverter.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         window.add(cbxConverter);
-    }
-    
-    private void setupSource()
-    {
+        
         lblInput = new JLabel("Enter your value: ", JLabel.LEFT);
         window.add(lblInput);
+        
         tfSource = new JFormattedTextField(new DecimalFormat());
-        tfSource.setColumns(10);
         window.add(tfSource);
-    }
-
-    private void setupTarget()
-    {
+        
         lblOutput = new JLabel("Result value: ", JLabel.LEFT);
         window.add(lblOutput);
         
         tfTarget = new JFormattedTextField(new DecimalFormat());
-        tfTarget.setColumns(10);
         window.add(tfTarget);
+    }
+    
+    private void setupConverter()
+    {
+        cbxConverter.setSelectedIndex(0);
+        cbxConverter.setPreferredSize(new Dimension(120, cbxConverter.getPreferredSize().height));
+        ((JLabel)cbxConverter.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+    }
+    
+    private void setupSource()
+    {
+        tfSource.setColumns(10);
+
+    }
+
+    private void setupTarget()
+    {
+        tfTarget.setColumns(10);
     }
     
     public static void main(String[] args)
