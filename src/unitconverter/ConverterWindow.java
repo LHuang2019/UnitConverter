@@ -35,6 +35,8 @@ public class ConverterWindow extends JFrame {
         this.lblOutput = new JLabel("Result value: ");
         this.add(this.lblOutput);
 
+        setupConversion();
+
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent evt)
@@ -42,6 +44,24 @@ public class ConverterWindow extends JFrame {
                 System.exit(0);
             }
         });
+    }
+
+    private void setupConversion()
+    {
+        this.tfSource = new JFormattedTextField(10);
+        this.tfTarget = new JFormattedTextField(10);
+        
+        this.tfTarget.setEditable(false);
+
+        this.tfSource.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent evt) 
+            {
+            }
+        });
+
+        this.add(this.tfSource);
+        this.add(this.tfTarget);
     }
 
     public static void main(String[] args)
