@@ -7,12 +7,17 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class ConverterWindow extends JFrame {
 
+    private String[] converterList = { "LengthConverter" };
     private Container window;
+    private JLabel lblConverterType;
     private JLabel lblInput;
     private JLabel lblOutput;
     private JFormattedTextField tfSource;
     private JFormattedTextField tfTarget;
-
+    private JComboBox cbConverter;
+    private JComboBox cbSourceUnit;
+    private JComboBox cbTargetUnit;
+    
     private UnitConverter converter;
 
     public ConverterWindow()
@@ -39,7 +44,6 @@ public class ConverterWindow extends JFrame {
     {
         lblInput = new JLabel("Enter your value: ", JLabel.LEFT);
         window.add(lblInput);
-        
         tfSource = new JFormattedTextField(new DecimalFormat());
         tfSource.setColumns(10);
         window.add(tfSource);
