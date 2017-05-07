@@ -31,7 +31,7 @@ public class ConverterWindow extends JFrame {
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Unit Converter");
-        setSize(280, 120);
+        setSize(300, 150);
         setVisible(true);
     }
 
@@ -57,11 +57,17 @@ public class ConverterWindow extends JFrame {
         tfSource = new JFormattedTextField(new DecimalFormat());
         window.add(tfSource);
         
+        cbxSourceUnit = new JComboBox<String>();
+        window.add(cbxSourceUnit);
+        
         lblOutput = new JLabel("Result value: ", JLabel.LEFT);
         window.add(lblOutput);
         
         tfTarget = new JFormattedTextField(new DecimalFormat());
         window.add(tfTarget);
+        
+        cbxTargetUnit = new JComboBox<String>();
+        window.add(cbxTargetUnit);
     }
     
     private void setupConverter()
