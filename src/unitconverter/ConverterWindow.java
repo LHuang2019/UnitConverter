@@ -1,5 +1,6 @@
 package unitconverter;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.text.DecimalFormat;
 import javax.swing.*;
@@ -7,16 +8,16 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class ConverterWindow extends JFrame {
 
-    private String[] converterList = { "LengthConverter" };
+    private String[] converterList = { "Length" };
     private Container window;
     private JLabel lblConverterType;
     private JLabel lblInput;
     private JLabel lblOutput;
     private JFormattedTextField tfSource;
     private JFormattedTextField tfTarget;
-    private JComboBox cbConverter;
-    private JComboBox cbSourceUnit;
-    private JComboBox cbTargetUnit;
+    private JComboBox<String> cbConverter;
+    private JComboBox<String> cbSourceUnit;
+    private JComboBox<String> cbTargetUnit;
     
     private UnitConverter converter;
 
@@ -36,8 +37,21 @@ public class ConverterWindow extends JFrame {
 
     private void setup()
     {
+        setupConverter();
         setupSource();
         setupTarget();
+    }
+    
+    private void setupConverter()
+    {
+        lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
+        window.add(lblConverterType);
+        
+        cbConverter = new JComboBox(converterList);
+        cbConverter.setSelectedIndex(0);
+        cbConverter.setPreferredSize(new Dimension(120, cbConverter.getPreferredSize().height));
+        ((JLabel)cbConverter.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        window.add(cbConverter);
     }
     
     private void setupSource()
