@@ -17,13 +17,13 @@ public class ConverterWindow extends JFrame {
     public ConverterWindow()
     {
         Container window = getContentPane();
-        
         window.setLayout(new FlowLayout());
-        setTitle("Unit Converter");
-        setSize(300, 120);
-
         this.converter = new LengthConverter();
         this.setup();
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Unit Converter");
+        setSize(300, 120);
         setVisible(true);
     }
 
@@ -36,14 +36,7 @@ public class ConverterWindow extends JFrame {
         this.add(this.lblOutput);
 
         setupConversion();
-
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent evt)
-            {
-                System.exit(0);
-            }
-        });
+        
     }
 
     private void setupConversion()
