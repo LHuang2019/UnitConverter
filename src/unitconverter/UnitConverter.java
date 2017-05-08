@@ -7,6 +7,7 @@ public interface UnitConverter {
 	String getTargetUnit();
 	double getSource();
 	double getTarget();
+	String[] getUnit();
 	
 	//Setter methods
 	void setSourceUnit(String sourceUnit);

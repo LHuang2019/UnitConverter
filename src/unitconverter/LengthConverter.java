@@ -8,7 +8,7 @@ package unitconverter;
 public class LengthConverter implements UnitConverter {
 
     // variable for conversion
-    final static public String[] unit = { "Meter", "KM", "CM", "MM", "Mile", "Yard", "Foot", "Inch", "Nautical Mile" };
+    final static private String[] UNIT = { "Meter", "KM", "CM", "MM", "Mile", "Yard", "Foot", "Inch", "Nautical Mile" };
     
     final static private double KM_TO_METER = 1000;
     final static private double CM_TO_METER = 0.01;
@@ -72,6 +72,11 @@ public class LengthConverter implements UnitConverter {
     @Override
     public double getTarget() {
         return this.target;
+    }
+    
+    @Override
+    public String[] getUnit() {
+        return LengthConverter.UNIT;
     }
 
     /**
@@ -186,5 +191,4 @@ public class LengthConverter implements UnitConverter {
         return message;
 
     }
-
 }
