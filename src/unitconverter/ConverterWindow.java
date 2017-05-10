@@ -1,4 +1,5 @@
 package unitconverter;
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -11,12 +12,18 @@ import javax.swing.*;
 public class ConverterWindow extends JFrame {
 
     private String[] converterList = { "", "Length" };
-    private Container window;
+    
+    private JPanel window;
+    private JPanel control;
+    private FlowLayout windowLayout;
+    
     private JLabel lblConverterType;
     private JLabel lblInput;
     private JLabel lblOutput;
+    
     private JFormattedTextField tfSource;
     private JFormattedTextField tfTarget;
+    
     private JComboBox<String> cbxConverter;
     private JComboBox<String> cbxSourceUnit;
     private JComboBox<String> cbxTargetUnit;
@@ -25,24 +32,31 @@ public class ConverterWindow extends JFrame {
 
     public ConverterWindow()
     {
-        window = getContentPane();
-        window.setLayout(new FlowLayout());
-        converter = new LengthConverter();
-
         setup();
-
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Unit Converter");
-        setSize(300, 150);
+        setSize(300, 200);
         setVisible(true);
     }
 
     private void setup()
     {
+        setupPanel();
         setupFrame();
         setupConverter();
         setupSource();
         setupTarget();
+    }
+    
+    private void setupPanel()
+    {
+        window = new JPanel();
+        windowLayout = new FlowLayout();
+        windowLayout.setAlignment(FlowLayout.LEADING);
+        window.setLayout(windowLayout);
+        
+        getContentPane().add(window, BorderLayout.CENTER);
     }
 
     private void setupFrame()
