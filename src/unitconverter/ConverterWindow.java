@@ -1,6 +1,4 @@
 package unitconverter;
-import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -46,7 +44,7 @@ public class ConverterWindow extends JFrame {
     private void setup()
     {
         setupPanel();
-        setupFrame();
+        setupComponent();
         setupConverter();
         setupSource();
         setupTarget();
@@ -71,7 +69,7 @@ public class ConverterWindow extends JFrame {
         add(panelTarget);
     }
 
-    private void setupFrame()
+    private void setupComponent()
     {
         lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
         panelConverter.add(lblConverterType);
