@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.DecimalFormat;
@@ -13,9 +14,9 @@ public class ConverterWindow extends JFrame {
 
     private String[] converterList = { "", "Length" };
     
-    private JPanel window;
-    private JPanel control;
-    private FlowLayout windowLayout;
+    private JPanel panelConverter;
+    private JPanel panelSource;
+    private JPanel panelTarget;
     
     private JLabel lblConverterType;
     private JLabel lblInput;
@@ -32,11 +33,13 @@ public class ConverterWindow extends JFrame {
 
     public ConverterWindow()
     {
+        setTitle("Unit Converter");
+        setSize(400, 200);
+        setLayout(new GridLayout(3, 1));
+        
         setup();
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Unit Converter");
-        setSize(300, 200);
         setVisible(true);
     }
 
@@ -51,39 +54,48 @@ public class ConverterWindow extends JFrame {
     
     private void setupPanel()
     {
-        window = new JPanel();
-        windowLayout = new FlowLayout();
-        windowLayout.setAlignment(FlowLayout.LEADING);
-        window.setLayout(windowLayout);
+        panelConverter = new JPanel();
+        panelConverter = new JPanel();
+        panelConverter.setLayout(new FlowLayout());
         
-        getContentPane().add(window, BorderLayout.CENTER);
+        panelSource = new JPanel();
+        panelSource = new JPanel();
+        panelSource.setLayout(new FlowLayout());
+        
+        panelTarget = new JPanel();
+        panelTarget = new JPanel();
+        panelTarget.setLayout(new FlowLayout());
+        
+        add(panelConverter);
+        add(panelSource);
+        add(panelTarget);
     }
 
     private void setupFrame()
     {
         lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
-        window.add(lblConverterType);
+        panelConverter.add(lblConverterType);
 
         cbxConverter = new JComboBox<String>(converterList);
-        window.add(cbxConverter);
+        panelConverter.add(cbxConverter);
 
         lblInput = new JLabel("Input value: ", JLabel.LEFT);
-        window.add(lblInput);
+        panelSource.add(lblInput);
 
         tfSource = new JFormattedTextField(new DecimalFormat());
-        window.add(tfSource);
+        panelSource.add(tfSource);
 
         cbxSourceUnit = new JComboBox<String>();
-        window.add(cbxSourceUnit);
+        panelSource.add(cbxSourceUnit);
 
         lblOutput = new JLabel("Result value: ", JLabel.LEFT);
-        window.add(lblOutput);
+        panelTarget.add(lblOutput);
 
         tfTarget = new JFormattedTextField(new DecimalFormat());
-        window.add(tfTarget);
+        panelTarget.add(tfTarget);
 
         cbxTargetUnit = new JComboBox<String>();
-        window.add(cbxTargetUnit);
+        panelTarget.add(cbxTargetUnit);
     }
 
     private void setupConverter()
