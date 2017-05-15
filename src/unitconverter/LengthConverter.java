@@ -119,7 +119,7 @@ public class LengthConverter implements UnitConverter {
     {
         double value = 0;
 
-        if (this.sourceUnit.equals(this.target))
+        if (this.sourceUnit.equals(this.targetUnit))
             return this.source;
         else if (this.source == 0)
             return 0;
@@ -127,41 +127,58 @@ public class LengthConverter implements UnitConverter {
         switch (this.sourceUnit) {
         case "Meter" :
             value = this.source;
-        case "Kilometer" :
+            break;
+        case "KM" :
             value = this.source * KM_TO_METER;
-        case "Centimeter" :
+            break;
+        case "CM" :
             value = this.source * CM_TO_METER;
-        case "Millimeter" :
+            break;
+        case "MM" :
             value = this.source * MM_TO_METER;
+            break;
         case "Mile" :
             value = this.source * MILE_TO_METER;
+            break;
         case "Yard" :
             value = this.source * YARD_TO_METER;
+            break;
         case "Foot" :
             value = this.source * FOOT_TO_METER;
+            break;
         case "Inch" :
             value = this.source * INCH_TO_METER;
-        case "Nautical mile" :
+            break;
+        case "Nautical Mile" :
             value = this.source * NAUTICAL_MILE_TO_METER;
+            break;
         }
 
         switch (this.targetUnit) {
-        case "Kilometer" :
+        case "KM" :
             value /= KM_TO_METER;
-        case "Centimeter" :
+            break;
+        case "CM" :
             value /= CM_TO_METER;
-        case "Millimeter" :
+            break;
+        case "MM" :
             value /= MM_TO_METER;
+            break;
         case "Mile" :
             value /= MILE_TO_METER;
+            break;
         case "Yard" :
             value /= YARD_TO_METER;
+            break;
         case "Foot" :
             value /= FOOT_TO_METER;
+            break;
         case "Inch" :
             value /= INCH_TO_METER;
+            break;
         case "Nautical mile" :
             value /= NAUTICAL_MILE_TO_METER;
+            break;
         }
 
         return value;
