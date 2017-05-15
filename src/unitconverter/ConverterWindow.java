@@ -156,6 +156,7 @@ public class ConverterWindow extends JFrame {
 	private void setupTarget()
 	{
 		tfTarget.setColumns(10);
+		tfTarget.setEditable(false);
 
 		cbxTargetUnit.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
