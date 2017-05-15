@@ -111,6 +111,7 @@ public class ConverterWindow extends JFrame {
 					{
 					case "Length" :
 						converter = new LengthConverter();
+						tfSource.setEditable(true);
 						cbxSourceUnit.removeAllItems();
 						cbxTargetUnit.removeAllItems();
 						for (int i = 0; i < converter.getUnit().length; i++)
@@ -121,6 +122,7 @@ public class ConverterWindow extends JFrame {
 						break;
 					default :
 						converter = null;
+						tfSource.setEditable(false);
 						cbxSourceUnit.removeAllItems();
 						cbxTargetUnit.removeAllItems();
 						break;
@@ -133,7 +135,8 @@ public class ConverterWindow extends JFrame {
 	private void setupSource()
 	{
 		tfSource.setColumns(10);
-
+		tfSource.setEditable(false);
+		
 		cbxSourceUnit.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				if (event.getStateChange() == ItemEvent.SELECTED) {
