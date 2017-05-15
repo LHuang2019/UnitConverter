@@ -4,6 +4,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import javax.swing.*;
 
@@ -136,7 +138,17 @@ public class ConverterWindow extends JFrame {
 			public void itemStateChanged(ItemEvent event) {
 				if (event.getStateChange() == ItemEvent.SELECTED) {
 					converter.setSourceUnit(cbxSourceUnit.getSelectedItem().toString());
+					converter.setTarget();
+					tfTarget.setText(Double.toString(converter.getTarget()));
 				}
+			}
+		});
+
+		tfSource.addKeyListener(new KeyAdapter() {
+			public void keyReleased(KeyEvent e) {
+				converter.setSource(Double.parseDouble(tfSource.getText()));
+				converter.setTarget();
+				tfTarget.setText(Double.toString(converter.getTarget()));
 			}
 		});
 	}
@@ -144,11 +156,13 @@ public class ConverterWindow extends JFrame {
 	private void setupTarget()
 	{
 		tfTarget.setColumns(10);
-		
+
 		cbxTargetUnit.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				if (event.getStateChange() == ItemEvent.SELECTED) {
 					converter.setTargetUnit(cbxTargetUnit.getSelectedItem().toString());
+					converter.setTarget();
+					tfTarget.setText(Double.toString(converter.getTarget()));
 				}
 			}
 		});
