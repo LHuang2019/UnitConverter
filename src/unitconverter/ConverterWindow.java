@@ -52,6 +52,9 @@ public class ConverterWindow extends JFrame {
 
 	private UnitConverter converter; // the converter object that does the conversion
 
+	/**
+	 * The constructor for setting up the GUI
+	 */
 	public ConverterWindow()
 	{
 		setTitle("Unit Converter");
@@ -64,6 +67,9 @@ public class ConverterWindow extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * The setup method that wraps all the settings for the GUI
+	 */
 	private void setup()
 	{
 		setupPanel();
@@ -73,6 +79,12 @@ public class ConverterWindow extends JFrame {
 		setupTarget();
 	}
 
+	/**
+	 * Set up the three different panels for the JFrame
+	 * 		converter panel
+	 * 		input panel
+	 * 		output panel
+	 */
 	private void setupPanel()
 	{
 		panelConverter = new JPanel();
@@ -92,6 +104,10 @@ public class ConverterWindow extends JFrame {
 		add(panelTarget);
 	}
 
+	/**
+	 * Set up the components for each panel and adds it to panel
+	 * include: label, text field, and combo box
+	 */
 	private void setupComponent()
 	{
 		lblConverterType = new JLabel("Conversion type: ", JLabel.LEFT);
@@ -119,6 +135,10 @@ public class ConverterWindow extends JFrame {
 		panelTarget.add(cbxTargetUnit);
 	}
 
+	/**
+	 * Set up the converter for conversion
+	 * Create event handler that configures converter based on converter combo box
+	 */
 	private void setupConverter()
 	{
 		cbxConverter.setSelectedIndex(0);
@@ -153,6 +173,10 @@ public class ConverterWindow extends JFrame {
 		});
 	}
 
+	/**
+	 * Set up event handler for source unit combo box
+	 * Set up event handler for calculate output based on input text field
+	 */
 	private void setupSource()
 	{
 		tfSource.setColumns(10);
@@ -177,6 +201,9 @@ public class ConverterWindow extends JFrame {
 		});
 	}
 
+	/**
+	 * Set up event handler for output unit combo box
+	 */
 	private void setupTarget()
 	{
 		tfTarget.setColumns(10);
@@ -193,6 +220,10 @@ public class ConverterWindow extends JFrame {
 		});
 	}
 
+	/**
+	 * Main method that runs the constructor for testing purposes
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		new ConverterWindow();
