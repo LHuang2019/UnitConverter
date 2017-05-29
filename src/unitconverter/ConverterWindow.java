@@ -9,27 +9,48 @@ import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import javax.swing.*;
 
+/**
+ * The GUI for the converter
+ * @author Li Huang
+ * @version 5.28.2017
+ */
 @SuppressWarnings("serial")
 public class ConverterWindow extends JFrame {
 
-	private String[] converterList = { "", "Length" };
+	
+	private String[] converterList = { "", "Length" };	// list of converters
 
+	/**
+	 * Represent 3 different panels inside the JFrame
+	 */
 	private JPanel panelConverter;
 	private JPanel panelSource;
 	private JPanel panelTarget;
 
+	/**
+	 * The label for converter list, input, and output
+	 */
 	private JLabel lblConverterType;
 	private JLabel lblInput;
 	private JLabel lblOutput;
 
+	/**
+	 * Text fields for showing input and output number
+	 */
 	private JFormattedTextField tfSource;
 	private JFormattedTextField tfTarget;
 
+	/**
+	 * The combo box for:
+	 * 		type of converter
+	 * 		input unit
+	 *		output unit
+	 */
 	private JComboBox<String> cbxConverter;
 	private JComboBox<String> cbxSourceUnit;
 	private JComboBox<String> cbxTargetUnit;
 
-	private UnitConverter converter;
+	private UnitConverter converter; // the converter object that does the conversion
 
 	public ConverterWindow()
 	{
