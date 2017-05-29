@@ -181,6 +181,8 @@ public class ConverterWindow extends JFrame {
 	{
 		tfSource.setColumns(10);
 		tfSource.setEditable(false);
+
+		((JLabel)cbxSourceUnit.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 		
 		cbxSourceUnit.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
@@ -209,6 +211,8 @@ public class ConverterWindow extends JFrame {
 		tfTarget.setColumns(10);
 		tfTarget.setEditable(false);
 
+		((JLabel)cbxTargetUnit.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+		
 		cbxTargetUnit.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				if (event.getStateChange() == ItemEvent.SELECTED) {
